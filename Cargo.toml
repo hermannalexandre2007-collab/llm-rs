@@ -1,0 +1,33 @@
+[package]
+name = "llm-rs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[[bin]]
+name = "bpe_tok"
+path = "src/bin/bpe_tok.rs"
+
+[[bin]]
+name = "train"
+path = "src/bin/train.rs"
+
+[[bin]]
+name = "generate"
+path = "src/bin/generate.rs"
+
+[[bin]]
+name = "quantize"
+path = "src/bin/quantize.rs"
+
+[[bin]]
+name = "generate_int8"
+path = "src/bin/generate_int8.rs"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
